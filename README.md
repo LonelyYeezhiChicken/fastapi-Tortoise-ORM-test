@@ -11,3 +11,13 @@ pip install -r requirements.txt
 ```
 uvicorn main:app --reload
 ```
+
+## docker
+1. build image
+```
+docker build -t my-fast-app .
+```
+2. run container
+```
+docker run -p 8099:8099 my-fast-app
+```
