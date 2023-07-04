@@ -35,8 +35,13 @@ async def create_user(user_data: UserCreateRequest):
 
 register_tortoise(
     app,
-    db_url="sqlite://db.sqlite3",
+    db_url="sqlite://database//db.sqlite3",
     modules={"models": ["main"]},
     generate_schemas=True,
     add_exception_handlers=True,
 )
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=8099)
